@@ -1,0 +1,7 @@
+ultralytics>=8.0.0
+pyyaml
+tqdm
+
+# NOTE: Install a matching torch build for your CUDA/CPU before or after installing these.
+# Example (CPU):
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
