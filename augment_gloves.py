@@ -56,15 +56,15 @@ def get_image_path(label_path):
     label_filename = os.path.basename(label_path)
     base_name = label_filename.rsplit('.', 1)[0]
     
-    # 対応する画像ファイルを探す
+    
     image_dir = os.path.join(os.path.dirname(label_path), '../images')
     for ext in ['.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG']:
-        # 元のファイル名で探す
+        
         img_path = os.path.join(image_dir, base_name + ext)
         if os.path.exists(img_path):
             return img_path
         
-        # ワイルドカード検索（部分マッチ）
+        
         for file in os.listdir(image_dir):
             if file.startswith(base_name) and file.endswith(ext):
                 return os.path.join(image_dir, file)
@@ -72,7 +72,7 @@ def get_image_path(label_path):
     return None
 
 def main():
-    # パス設定
+    
     labels_dir = 'train/labels'
     images_dir = 'train/images'
     
